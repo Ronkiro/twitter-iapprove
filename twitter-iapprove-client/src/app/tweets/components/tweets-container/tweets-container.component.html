@@ -1,0 +1,11 @@
+<ng-container *ngIf="tweets">
+  <div *ngFor="let tweet of tweets.statuses; index as tweetId">
+    <tweets-page-tweet [text]="tweet.text" [createdAt]="tweet.created_at" [favorites]="tweet.favorite_count"
+      [retweets]="tweet.retweet_count" (decision)="handleDecision($event, tweetId)"></tweets-page-tweet>
+  </div>
+</ng-container>
+
+  <!-- No content -->
+  <div class="mt-4" *ngIf="!(tweets?.statuses?.length > 0)">
+    <span>Nenhum tweet encontrado. Por favor, utilize novos parâmetros para busca.</span>
+  </div>

@@ -1,0 +1,19 @@
+<div class="container">
+  <h2 class="row">
+    Busca de Hashtags
+  </h2>
+  <div class="row">
+    <form [formGroup]="searchForm" (ngSubmit)="handleSubmit()">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="searchIcon">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </span>
+        </div>
+        <input type="text" class="col-8 form-control" placeholder="Busca" aria-label="Search"
+          aria-describedby="searchIcon" formControlName="hashtag">
+        <input type="submit" class="col-4 btn btn-primary" value="Enviar" />
+      </div>
+    </form>
+  </div>
+</div>

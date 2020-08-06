@@ -1,0 +1,14 @@
+<div class="container my-3">
+  Text: {{ text }} <br />
+  Favorites: {{ favorites }} <br/>
+  Retweets: {{ retweets}} <br />
+  Created At: {{ createdAt | moment }}
+
+  <button class="btn btn-success mx-2" (click)="handleApproval()">
+    <i class="fa fa-check-circle" aria-hidden="true"></i>
+  </button>
+
+  <button class="btn btn-danger mx-2" (click)="handleDenial()">
+    <i class="fa fa-times-circle" aria-hidden="true"></i>
+  </button>
+</div>
