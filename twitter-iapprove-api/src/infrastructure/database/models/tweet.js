@@ -16,7 +16,19 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: false,
             unique: true
-        }
+        },
+        text: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        screenName: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
     }, {
         freezeTableName: true,
         timestamps: true,

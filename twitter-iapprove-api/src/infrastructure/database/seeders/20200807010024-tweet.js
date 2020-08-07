@@ -15,6 +15,9 @@ module.exports = {
       id: '123-dwad-2312',
       isApproved: true,
       tweetId: 1291772377702047700,
+      text: "test text",
+      name: "I am Test",
+      screenName: "test",
       createdAt: new Date(),
       updatedAt: new Date()
     }])

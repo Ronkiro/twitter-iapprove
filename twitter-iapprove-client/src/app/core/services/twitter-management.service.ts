@@ -15,14 +15,20 @@ export class TwitterManagementService {
   approve(tweet) : Observable<any> {
     return this.http.post(environment.API_URL + managementEndpoint, {
       isApproved: true,
-      tweetId: tweet['id']
+      tweetId: tweet['id'],
+      text: tweet['text'],
+      name: tweet['user']['name'],
+      screenName: tweet['user']['screen_name']
     });
   }
 
   deny(tweet) : Observable<any> {
     return this.http.post(environment.API_URL + managementEndpoint, {
       isApproved: false,
-      tweetId: tweet['id']
+      tweetId: tweet['id'],
+      text: tweet['text'],
+      name: tweet['user']['name'],
+      screenName: tweet['user']['screen_name']
     });
   }
 }

@@ -17,6 +17,18 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false
       },
+      name: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      text: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      screenName: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
