@@ -1,5 +1,5 @@
 .twPage {
-  max-height: 60vh;
+  height: 60vh;
   overflow-y: auto;
 }
 
@@ -20,4 +20,24 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.m-auto-0 {
+  margin: auto 0;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 575.98px) {
+  .twPage {
+    max-height: 30vh;
+    overflow-y: auto;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 767.98px) {
+  .twPage {
+    max-height: 40vh;
+    overflow-y: auto;
+  }
 }
