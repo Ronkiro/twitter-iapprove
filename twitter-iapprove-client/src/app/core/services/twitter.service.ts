@@ -1,9 +1,9 @@
-import { ITwitterSearchResponse } from './../interfaces/ITwitterSearchResponse';
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
+import { ITwitterSearchResponse } from './../interfaces/ITwitterSearchResponse';
 
 export const twitterAPIURL = environment.API_URL;
 export const tweetsSearchEndpointURL = '/tweets';
@@ -16,14 +16,16 @@ export class TwitterService {
   constructor(private http: HttpClient) { }
 
   searchTweets(queryString: string,
-    count = 15,
+    count = environment.MAX_TWEETS,
     resultType: 'mixed' | 'recent' | 'popular' = 'recent'): Observable<ITwitterSearchResponse> {
     // return of(mock);
     const endpointURL = twitterAPIURL + tweetsSearchEndpointURL;
     return this.http.get(
       `${endpointURL}/${queryString}?resultType=${resultType}&count=${count}`
     ).pipe(
-      map(e => e['data'] as ITwitterSearchResponse
+      take(1),
+      map(
+        e => e['data'] as ITwitterSearchResponse
       )
     );
   }

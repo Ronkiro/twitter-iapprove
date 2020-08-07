@@ -9,12 +9,12 @@
 
 <!-- No content -->
 <div class="mt-5" class="notFound" *ngIf="!(tweets?.statuses?.length > 0) && !isLoading">
-  <span>Não encontrei mais tweets.
+  <span>Não encontrei tweets.
     Por favor, busque outra hashtag ou clique no botão atualizar
     para buscar outros tweets.</span>
 </div>
 
-<div class="mt-5" class="loading" *ngIf="!(tweets?.statuses?.length > 0) && isLoading">
+<div class="mt-5" class="loading" *ngIf="isLoading">
   <span>
     Carregando novos tweets... <i class="fas fa-circle-notch fa-spin"></i>
   </span>

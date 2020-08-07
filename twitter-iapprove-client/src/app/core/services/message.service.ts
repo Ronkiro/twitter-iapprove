@@ -16,6 +16,21 @@ export class MessageService {
     return Swal.fire(title, message, 'error');
   }
 
+  warn(message, title = "Cuidado!", confirmButton=null, cancelButton=null) {
+    const showCancel = cancelButton? true : false;
+    const confirmText = confirmButton || "";
+    cancelButton = cancelButton || "";
+
+    return Swal.fire({
+      title,
+      text: message,
+      icon: 'warning',
+      showCancelButton: showCancel,
+      confirmButtonText: confirmText,
+      cancelButtonText: cancelButton,
+    });
+  }
+
   custom(...args: any[]) {
     return Swal.fire(...args);
   }

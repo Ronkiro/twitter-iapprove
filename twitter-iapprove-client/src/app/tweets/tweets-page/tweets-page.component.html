@@ -6,10 +6,13 @@
       <button class="btn btn-primary w-100 mb-2 col-xs-12" (click)="handleSearch(searchParam)">
         <i class="fa fa-refresh" aria-hidden="true"></i>
       </button>
+      <button class="btn btn-danger w-100 mb-2 col-xs-12" (click)="handleRemoval()">
+        Limpar aprovações/reprovações de tweets
+      </button>
     </div>
     <div class="col-md-8 col-xs-12">
       <div class="twPage">
-        <tweets-page-tweets-container [tweets]="tweets$ | async" (decision)="handleDecision($event)"
+        <tweets-page-tweets-container [tweets]="tweets" (decision)="handleDecision($event)"
           [isLoading]="isLoading"></tweets-page-tweets-container>
       </div>
     </div>

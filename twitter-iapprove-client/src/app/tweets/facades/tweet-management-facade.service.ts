@@ -21,8 +21,8 @@ export class TweetManagementFacadeService {
   public async handleDecision(decision: boolean,
     tweets: TweetStatus[],
     tweetId: number) {
-    const errorMessage = decision? Textos.tweetApprovalError : Textos.tweetDenyError;
-    const successMessage = decision? Textos.tweetApprovalSuccess : Textos.tweetDenySuccess;
+    const errorMessage = decision ? Textos.tweetApprovalError : Textos.tweetDenyError;
+    const successMessage = decision ? Textos.tweetApprovalSuccess : Textos.tweetDenySuccess;
 
     return await this.sendDecisionToAPI(decision, tweets[tweetId])
       .toPromise()
@@ -42,7 +42,21 @@ export class TweetManagementFacadeService {
    * @param tweetId The tweet's index from tweets list.
    */
   public async handleDelete() {
-    return await this.service.deleteAll();
+    return new Promise((resolve, reject) => this.messageService.warn(Textos.toDelete,
+      "Cuidado!", "Sim", "Não").then(
+        e => e.value && this.service.deleteAll().toPromise().then(
+          r => {
+            this.messageService.success(Textos.toDeleteSuccess);
+            resolve(r);
+          }
+        ).catch(
+          err => {
+            this.messageService.error(Textos.toDeleteFailure);
+            reject(err);
+          }
+        )
+      ));
+
   }
 
   private sendDecisionToAPI(decision: boolean, tweet: TweetStatus): Observable<any> {
