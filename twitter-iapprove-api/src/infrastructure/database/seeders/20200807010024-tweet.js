@@ -14,6 +14,7 @@ module.exports = {
     await queryInterface.bulkInsert('tweet', [{
       id: '123-dwad-2312',
       isApproved: true,
+      tweetId: 1291772377702047700,
       createdAt: new Date(),
       updatedAt: new Date()
     }])

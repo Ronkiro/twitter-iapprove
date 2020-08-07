@@ -13,6 +13,10 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         allowNull: false
       },
+      tweetId: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

@@ -10,7 +10,19 @@ module.exports = ({ model, twitterService }) => {
         )
 
     const getAllFromHash = (...args) => {
-        return twitterService.getFromHash(...args);
+        const getAll = (...args) => model.findAll(...args).then((entity) =>
+            entity.map((data) => {
+                const { dataValues } = data
+                return toEntity(dataValues)
+            }))
+        return twitterService.getFromHash(...args)
+                    .then(async r => {
+                        const all = await getAll({attributes: [
+                            'tweetId'
+                        ]});
+                        r['statuses'] = r['statuses'].filter(e => !all.some(obj => obj.tweetId == e.id));
+                        return r;
+                    });
     }
 
     const create = (...args) =>

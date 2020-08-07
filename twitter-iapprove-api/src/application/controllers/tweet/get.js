@@ -5,7 +5,7 @@ module.exports = ({ tweetRepository }) => {
             .then(() =>
                 tweetRepository.getAll({
                     attributes: [
-                        'id', 'isApproved'
+                        'id', 'isApproved', 'tweetId'
                     ]
                 })
             )

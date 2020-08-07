@@ -5,6 +5,7 @@ const { cleanData } = require('../helper')
 const Tweet = t.struct({
     id: t.maybe(t.String),
     isApproved: t.maybe(t.Boolean),
+    tweetId: t.maybe(t.Integer),
     createdAt: t.maybe(t.Date),
     updatedAt: t.maybe(t.Date)
 })

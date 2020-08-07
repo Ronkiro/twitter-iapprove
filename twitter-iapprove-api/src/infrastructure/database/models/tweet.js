@@ -11,6 +11,11 @@ module.exports = function (sequelize, DataTypes) {
         isApproved: {
             type: DataTypes.BOOLEAN,
             allowNull: false
+        },
+        tweetId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            unique: true
         }
     }, {
         freezeTableName: true,
