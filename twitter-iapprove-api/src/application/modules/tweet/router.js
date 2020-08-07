@@ -182,6 +182,20 @@ module.exports = ({
                     res.status(Status.BAD_REQUEST).json(
                         Fail(error.message))
                 })
+        });
+
+        router
+        .delete('/', (req, res) => {
+            deleteUseCase
+                .removeAll()
+                .then(data => {
+                    res.status(Status.OK).json(Success(data))
+                })
+                .catch((error) => {
+                    logger.error(error) // we still need to log every error for debugging
+                    res.status(Status.BAD_REQUEST).json(
+                        Fail(error.message))
+                })
         })
 
     return router

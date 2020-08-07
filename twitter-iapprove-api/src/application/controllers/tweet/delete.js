@@ -1,13 +1,10 @@
 
 module.exports = ({ tweetRepository }) => {
-    // code for getting all the items
     const remove = ({ id }) => {
         return Promise
             .resolve()
             .then(() =>
-                tweetRepository.update({
-                    isDeleted: 1
-                }, {
+                tweetRepository.destroy({
                     where: { id }
                 })
             )
@@ -16,7 +13,21 @@ module.exports = ({ tweetRepository }) => {
             })
     }
 
+    const removeAll = () => {
+        return Promise
+            .resolve()
+            .then(() =>
+                tweetRepository.destroy({
+                    truncate: true
+                })
+            )
+            .catch((error) => {
+                throw new Error(error)
+            })
+    }
+
     return {
-        remove
+        remove,
+        removeAll
     }
 }

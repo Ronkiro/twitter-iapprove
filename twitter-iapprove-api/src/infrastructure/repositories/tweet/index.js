@@ -10,6 +10,7 @@ module.exports = ({ model, twitterService }) => {
         )
 
     const getAllFromHash = (...args) => {
+        // TODO: DRY
         const getAll = (...args) => model.findAll(...args).then((entity) =>
             entity.map((data) => {
                 const { dataValues } = data
