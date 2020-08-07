@@ -35,6 +35,16 @@ export class TweetManagementFacadeService {
 
   }
 
+  /** handleDecision
+   * @description Handles delete of the whole db
+   * @param decision The decision from user-event.
+   * @param tweets The current tweets state.
+   * @param tweetId The tweet's index from tweets list.
+   */
+  public async handleDelete() {
+    return await this.service.deleteAll();
+  }
+
   private sendDecisionToAPI(decision: boolean, tweet: TweetStatus): Observable<any> {
     return decision ? this.service.approve(tweet) : this.service.deny(tweet);
   }
