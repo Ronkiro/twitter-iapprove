@@ -3,7 +3,6 @@ const path = require('path')
 const Sequelize = require('sequelize')
 
 module.exports = ({ config, basePath }) => {
-    console.log({ ...config.db });;
     const sequelize = new Sequelize(
         config.db.database,
         config.db.user,

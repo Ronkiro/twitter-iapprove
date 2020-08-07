@@ -1,11 +1,13 @@
+const fetch = require('node-fetch')
+
 module.exports = () => {
-    const getFromHash = async ({ hashtag }) => {
-        return {
-            "id": "123-dwad-2312",
-            "isApproved": true,
-            "createdAt": "2020-08-07T01:26:25.921Z",
-            "updatedAt": "2020-08-07T01:26:25.921Z"
-        }
+    const getFromHash =  (hashtag, resulttype, count) => {
+        return fetch(`https://api.twitter.com/1.1/search/tweets.json?q=%23${hashtag}&resultType=${resulttype}&count=${count}`,
+        {
+            headers: {
+                "Authorization": `Bearer ${process.env.TWITTER_BEARER_KEY}`
+            }
+        }).then(r => r.json());
     }
 
     return {

@@ -14,14 +14,10 @@ module.exports = ({ tweetRepository }) => {
             })
     }
 
-    const allFromHash = () => {
+    const allFromHash = (hash, resulttype="recent", count="100" ) => {
         return Promise.resolve()
             .then(
-                () => tweetRepository.getAllFromHash({
-                    attributes: [
-                        'id', 'isApproved', 'createdAt', 'updatedAt'
-                    ]
-                })
+                () => tweetRepository.getAllFromHash(hash, resulttype, count)
             ).catch(error => {
                 throw new Error(error)
             })

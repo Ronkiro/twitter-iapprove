@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL: "http://localhost:4000/api/v1/tweets"
+  API_URL: "http://localhost:4000/api/v1"
 };
 
 /*

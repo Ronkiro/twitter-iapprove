@@ -44,8 +44,11 @@ module.exports = ({
         })
 
     router.get('/:hash', (req, res) => {
+        const query = require('url').parse(req.url, true).query;
         getUseCase
-            .allFromHash(req.params.id)
+            .allFromHash(req.params.hash,
+                query.resulttype,
+                query.count)
             .then(data => {
                 res.status(Status.OK).json(Success(data))
             })

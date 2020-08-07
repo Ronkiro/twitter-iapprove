@@ -24,7 +24,7 @@ export class TweetManagementFacadeService {
     const errorMessage = decision? Textos.tweetApprovalError : Textos.tweetDenyError;
     const successMessage = decision? Textos.tweetApprovalSuccess : Textos.tweetDenySuccess;
 
-    await this.sendDecisionToAPI(decision, tweets[tweetId])
+    return await this.sendDecisionToAPI(decision, tweets[tweetId])
       .toPromise()
       .then(
         () => { this.messageService.success(successMessage); }

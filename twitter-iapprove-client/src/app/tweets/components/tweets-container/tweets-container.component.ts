@@ -1,6 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ITwitterSearchResponse } from './../../../core/interfaces/ITwitterSearchResponse';
-import { TweetManagementFacadeService } from './../../facades/tweet-management-facade.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ITwitterSearchResponse, TweetStatus } from './../../../core/interfaces/ITwitterSearchResponse';
+
+export type Decision = {
+  decision: boolean,
+  statuses: TweetStatus[],
+  tweetId: number
+};
 
 @Component({
   selector: 'tweets-page-tweets-container',
@@ -10,12 +15,14 @@ import { TweetManagementFacadeService } from './../../facades/tweet-management-f
 export class TweetsContainerComponent implements OnInit {
 
   @Input() tweets: ITwitterSearchResponse;
+  @Output() decision = new EventEmitter<Decision>();
 
-  constructor(private managementFacade: TweetManagementFacadeService) { }
+  constructor() { }
 
   ngOnInit(): void {}
 
   handleDecision(decision: boolean, tweetId: number): void {
-    this.managementFacade.handleDecision(decision, this.tweets.statuses, tweetId);
+    const statuses = this.tweets.statuses;
+    this.decision.emit({ decision, statuses, tweetId });
   }
 }
