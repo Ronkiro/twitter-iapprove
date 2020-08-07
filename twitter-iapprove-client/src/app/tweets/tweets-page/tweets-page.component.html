@@ -1,14 +1,12 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <tweets-page-search-container class="col-4" (search)="handleSearch($event)"></tweets-page-search-container>
-    <div class="col-8">
+    <tweets-page-search-container class="col-md-4 col-xs-12" (search)="handleSearch($event)">
+    </tweets-page-search-container>
+    <div class="col-md-8 col-xs-12">
       <div class="twPage">
-      <tweets-page-tweets-container
-        [tweets]="tweets$ | async"
-        (decision)="handleDecision($event)"
-        [isLoading]="isLoading"
-        ></tweets-page-tweets-container>
+        <tweets-page-tweets-container [tweets]="tweets$ | async" (decision)="handleDecision($event)"
+          [isLoading]="isLoading"></tweets-page-tweets-container>
+      </div>
     </div>
-  </div>
   </div>
 </div>
