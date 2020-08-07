@@ -16,6 +16,7 @@ export class TweetsContainerComponent implements OnInit {
 
   @Input() tweets: ITwitterSearchResponse;
   @Input() isLoading: boolean;
+
   @Output() decision = new EventEmitter<Decision>();
 
   constructor() { }
@@ -23,6 +24,7 @@ export class TweetsContainerComponent implements OnInit {
   ngOnInit(): void {}
 
   handleDecision(decision: boolean, tweetId: number): void {
+    console.log(this.isLoading);
     const statuses = this.tweets.statuses;
     this.decision.emit({ decision, statuses, tweetId });
   }

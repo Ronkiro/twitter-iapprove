@@ -23,16 +23,18 @@ export class TweetsPageComponent implements OnInit {
     this.isLoading = true;
     this.searchParam = searchParam;
     this.searchFacade.searchTweets(searchParam)
-      .subscribe(tweets => this.tweets = tweets);
-    this.isLoading = false;
+      .subscribe(tweets => {
+        this.tweets = tweets;
+        this.isLoading = false;
+      });
   }
 
   handleDecision(params: Decision) {
     const { decision, statuses, tweetId } = params;
     this.managementFacade.handleDecision(decision, statuses, tweetId)
-            .then(
-              () => this.handleSearch(this.searchParam)
-            );
+      .then(
+        () => this.handleSearch(this.searchParam)
+      );
   }
 
   handleRemoval() {
