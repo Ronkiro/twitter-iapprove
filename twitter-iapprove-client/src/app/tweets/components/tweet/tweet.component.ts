@@ -18,6 +18,9 @@ export class TweetComponent implements OnInit {
   @Input() retweets: number;
   @Input() favorites: number;
   @Input() createdAt: string;
+  @Input() nickname: string;
+  @Input() realname: string;
+  @Input() profileImg: string;
 
   @Output() decision = new EventEmitter<boolean>();
 

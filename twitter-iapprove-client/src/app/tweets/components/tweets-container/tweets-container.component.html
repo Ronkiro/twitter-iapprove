@@ -1,11 +1,21 @@
 <ng-container *ngIf="tweets">
   <div *ngFor="let tweet of tweets.statuses; index as tweetId">
     <tweets-page-tweet [text]="tweet.text" [createdAt]="tweet.created_at" [favorites]="tweet.favorite_count"
-      [retweets]="tweet.retweet_count" (decision)="handleDecision($event, tweetId)"></tweets-page-tweet>
+      [retweets]="tweet.retweet_count" [nickname]="tweet.user.screen_name" [realname]="tweet.user.name"
+      [profileImg]="tweet.user.profile_image_url"
+      (decision)="handleDecision($event, tweetId)"></tweets-page-tweet>
   </div>
 </ng-container>
 
-  <!-- No content -->
-  <div class="mt-4" *ngIf="!(tweets?.statuses?.length > 0)">
-    <span>Nenhum tweet encontrado. Por favor, utilize novos parâmetros para busca.</span>
-  </div>
+<!-- No content -->
+<div class="mt-5" class="notFound" *ngIf="!(tweets?.statuses?.length > 0) && !isLoading">
+  <span>Não encontrei mais tweets.
+    Por favor, busque outra hashtag ou clique no botão atualizar
+    para buscar outros commits.</span>
+</div>
+
+<div class="mt-5" class="loading" *ngIf="!(tweets?.statuses?.length > 0) && isLoading">
+  <span>
+    Carregando novos tweets... <i class="fas fa-circle-notch fa-spin"></i>
+  </span>
+</div>

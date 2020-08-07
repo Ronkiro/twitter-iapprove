@@ -8,7 +8,7 @@ export class MomentPipe implements PipeTransform {
 
   transform(value: string | Date): string {
     moment.locale('pt');
-    return moment(value).format("DD/MM/yyyy hh:mm");
+    return moment(value).format("DD MMM, yyyy");
   }
 
 }

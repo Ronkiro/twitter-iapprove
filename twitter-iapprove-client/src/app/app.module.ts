@@ -7,7 +7,6 @@ import { GloboIconComponent } from './shared/components/globo-icon/globo-icon.co
 import { FooterComponent } from './shared/containers/footer/footer.component';
 import { HeaderComponent } from './shared/containers/header/header.component';
 import { TweetsModule } from './tweets/tweets.module';
-import { MomentPipe } from './shared/pipes/moment.pipe';
 
 
 @NgModule({

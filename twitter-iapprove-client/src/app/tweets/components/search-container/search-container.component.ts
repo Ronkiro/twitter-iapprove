@@ -20,7 +20,7 @@ export class SearchContainerComponent implements OnInit {
   }
 
   handleSubmit() {
-    this.search.emit(this.searchForm.value.hashtag);
+    this.search.emit(this.searchForm.value.hashtag.replace("#", ""));
   }
 
 }

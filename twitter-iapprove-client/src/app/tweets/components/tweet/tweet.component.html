@@ -1,14 +1,26 @@
-<div class="container my-3">
-  Text: {{ text }} <br />
-  Favorites: {{ favorites }} <br/>
-  Retweets: {{ retweets}} <br />
-  Created At: {{ createdAt | moment }}
+<div class="container mb-5 tweet">
+  <div class="row">
+    <div class="col-1">
+      <img class="profileImg" [src]="profileImg" />
+    </div>
+    <div class="mb-2 col-11">
+      <b>{{ realname }}</b>
+      <span class="ml-2 altText">@{{nickname}} · {{ createdAt | moment }}</span><br />
+      {{ text }}
+      <br />
+      <span class="mr-2">
+        <i class="fa fa-heart" aria-hidden="true"></i> {{ favorites }}
+      </span>
+      <span><i class="fa fa-retweet" aria-hidden="true"></i>{{ retweets}}</span> <br />
+    </div>
+  </div>
+  <div class="float-right">
+    <button class="btn btn-success mx-2" (click)="handleApproval()">
+      <i class="fa fa-check-circle" aria-hidden="true"></i>
+    </button>
 
-  <button class="btn btn-success mx-2" (click)="handleApproval()">
-    <i class="fa fa-check-circle" aria-hidden="true"></i>
-  </button>
-
-  <button class="btn btn-danger mx-2" (click)="handleDenial()">
-    <i class="fa fa-times-circle" aria-hidden="true"></i>
-  </button>
+    <button class="btn btn-danger mx-2" (click)="handleDenial()">
+      <i class="fa fa-times-circle" aria-hidden="true"></i>
+    </button>
+  </div>
 </div>

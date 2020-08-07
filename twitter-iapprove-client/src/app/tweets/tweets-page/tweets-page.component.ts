@@ -13,6 +13,7 @@ export class TweetsPageComponent implements OnInit {
 
   tweets$: Observable<ITwitterSearchResponse>;
   searchParam: string = "";
+  isLoading = false;
 
   constructor(private searchFacade: TwitterSearchFacadeService,
     private managementFacade: TweetManagementFacadeService) { }
@@ -20,8 +21,10 @@ export class TweetsPageComponent implements OnInit {
   ngOnInit(): void { }
 
   handleSearch(searchParam: string) {
+    this.isLoading = true;
     this.searchParam = searchParam;
     this.tweets$ = this.searchFacade.searchTweets(searchParam);
+    window.setInterval(() => this.isLoading = false, 1500);
   }
 
   handleDecision(params: Decision) {

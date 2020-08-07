@@ -15,6 +15,7 @@ export type Decision = {
 export class TweetsContainerComponent implements OnInit {
 
   @Input() tweets: ITwitterSearchResponse;
+  @Input() isLoading: boolean;
   @Output() decision = new EventEmitter<Decision>();
 
   constructor() { }
