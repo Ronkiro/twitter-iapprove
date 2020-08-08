@@ -24,4 +24,12 @@ Execute o arquivo execute na raíz do projeto
     <img src="../assets/img/globo.png" />
 </p>
 
+# Executando testes
+
+```
+npm test
+```
+
+Irá executar o **mocha**, que executará a suíte de testes.
+
 [Retornar à raiz](../README.md)

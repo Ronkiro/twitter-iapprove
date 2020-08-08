@@ -37,4 +37,10 @@ Temos a seguinte estrutura:
 
 ```
 
+# Testes
+
+Utilizei mocha, com Chai e Sinon. Uma união bem conhecida, por permitir a geração de testes com facilidade e independentes.
+
+A configuração do mocha segue o arquivo `.mocharc.js`, que aponta para os testes na pasta `/test/`.
+
 [Retornar à API](../README.md)
