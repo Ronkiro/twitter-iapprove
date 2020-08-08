@@ -20,10 +20,6 @@ Altere o arquivo `.env`([Mais informações](https://www.ibm.com/support/knowled
 
 Execute o arquivo execute na raíz do projeto
 
-<p align="center">
-    <img src="../assets/img/globo.png" />
-</p>
-
 # Executando testes
 
 ```
@@ -31,6 +27,11 @@ npm test
 ```
 
 Irá executar o **mocha**, que executará a suíte de testes.
+
+
+<p align="center">
+    <img src="../assets/img/globo.png" />
+</p>
 
 [Clique aqui para ler sobre as tecnologias que utilizei para montar a API](ABOUT.md)
 
