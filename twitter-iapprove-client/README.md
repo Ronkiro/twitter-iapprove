@@ -27,5 +27,6 @@ Execute o arquivo execute na raíz do projeto
 * Realize o procedimento de [instalação](#instalação)
 * Execute `npm start` neste diretório
 
-
-![Logo Globo](../assets/img/globo.png)
+<p align="center">
+    <img src="../assets/img/globo.png" />
+</p>
