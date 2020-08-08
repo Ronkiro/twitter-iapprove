@@ -4,7 +4,9 @@ Aqui temos o cliente do software. Ele é responsável por toda interface que o u
 
 ![Imagem do cliente executando](../assets/img/client-running.jpg)
 
-![Imagem do cliente executando mobile](../assets/img/client-running-mobile.jpg)
+<p align="center">
+    <img src="../assets/img/client-running-mobile.jpg" />
+</p>
 
 # Instalação
 
