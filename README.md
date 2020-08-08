@@ -14,7 +14,7 @@ Segue o enunciado do teste:
 
 [Ler sobre o frontend](./twitter-iapprove-client/README.md)
 
-[Ler sobre o frontend](./twitter-iapprove-client/README.md)
+[Ler sobre o backend](./twitter-iapprove-api/README.md)
 
 # Executar a aplicação
 
