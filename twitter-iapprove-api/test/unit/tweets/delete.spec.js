@@ -27,6 +27,12 @@ describe('Application -> Controllers -> Tweet -> Delete', () => {
             // eslint-disable-next-line
             expect(method).to.have.been.called
         })
+
+        it('should have called deleteAll method of tweetRepository', async () => {
+            await useCase.removeAll()
+            // eslint-disable-next-line
+            expect(method).to.have.been.called
+        })
     })
 
     describe('Fail path', () => {
@@ -41,10 +47,20 @@ describe('Application -> Controllers -> Tweet -> Delete', () => {
             })
         })
 
-        it('should display error on rejection', async () => {
+        it('should display error on rejection -> remove', async () => {
             let error
             try {
                 await useCase.remove({ id: 1 })
+            } catch (e) {
+                error = e.message
+            }
+            expect(error).to.equal('Error')
+        })
+
+        it('should display error on rejection -> removeAll', async () => {
+            let error
+            try {
+                await useCase.removeAll()
             } catch (e) {
                 error = e.message
             }
