@@ -30,3 +30,5 @@ Execute o arquivo execute na raíz do projeto
 <p align="center">
     <img src="../assets/img/globo.png" />
 </p>
+
+[Retornar à raiz](../README.md)

@@ -2,6 +2,8 @@
 
 Aqui temos a API do software. Ela é a responsável por todo back-end.
 
+[Clique aqui para ler sobre as tecnologias que utilizei para montar a API](ABOUT.md)
+
 ![Imagem da Api Executando](../assets/img/api-runnin.png)
 
 # Instalação
@@ -21,3 +23,5 @@ Execute o arquivo execute na raíz do projeto
 <p align="center">
     <img src="../assets/img/globo.png" />
 </p>
+
+[Retornar à raiz](../README.md)
