@@ -27,6 +27,10 @@ Execute o arquivo execute na raíz do projeto
 * Realize o procedimento de [instalação](#instalação)
 * Execute `npm start` neste diretório
 
+# Teste
+
+Para a execução de testes, utilize `npm test`. Isto executará o Karma, que ficará responsável pela execução da suíte de testes.
+
 <p align="center">
     <img src="../assets/img/globo.png" />
 </p>
