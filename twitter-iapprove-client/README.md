@@ -1,27 +1,29 @@
-# TwitterIapproveClient
+# Client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+Aqui temos o cliente do software. Ele é responsável por toda interface que o usuário interage.
 
-## Development server
+![Imagem do cliente executando](../assets/img/client-running.jpg)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![Imagem do cliente executando mobile](../assets/img/client-running-mobile.jpg)
 
-## Code scaffolding
+# Instalação
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Instale os scripts do node disponíveis no `package.json`
 
-## Build
+```
+npm i
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Altere o arquivo `environments.ts` [src/environments](src/environments). Disponibilizei um arquivo `environments.ts` de exemplo para facilitar futuras configurações.
 
-## Running unit tests
+# Execução
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Execute o arquivo execute na raíz do projeto
 
-## Running end-to-end tests
+**OU**
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* Realize o procedimento de [instalação](#instalação)
+* Execute `npm start` neste diretório
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![Logo Globo](../assets/img/globo.png)
