@@ -4,8 +4,6 @@
 
 ![Imagem do cliente executando](./assets/img/client-running.jpg)
 
-![Imagem do cliente executando mobile](./assets/img/client-running-mobile.jpg)
-
 <img src="./assets/img/client-running-mobile.jpg" />
 
 </p>
