@@ -8,9 +8,34 @@ module.exports = {
         'dialect': 'sqlite',
         'database': 'iapprove',
         'storage': process.env.DATABASE_URL || ":memory:",
-        'dialectOptions': { },
+        'dialectOptions': {},
         'user': '',
         'passwd': '',
         // 'logging': true // true = log sql
     },
+    test: {
+        'dialect': 'sqlite',
+        'database': 'iapprove',
+        'storage': process.env.DATABASE_URL || ":memory:",
+        'dialectOptions': {},
+        'user': '',
+        'passwd': '',
+        logging: false,
+    },
+    production: {
+        'dialect': 'sqlite',
+        'database': 'iapprove',
+        'storage': process.env.DATABASE_URL || ":memory:",
+        'dialectOptions': {},
+        'user': '',
+        'passwd': '',
+        logging: true,
+        'ssl': true,
+        'dialectOptions': {
+            'ssl': {
+                'require': true
+            }
+        }
+    }
+
 }
