@@ -18,4 +18,6 @@ Altere o arquivo `.env`([Mais informações](https://www.ibm.com/support/knowled
 
 Execute o arquivo execute na raíz do projeto
 
-![Logo Globo](../assets/img/globo.png)
+<p align="center">
+    <img src="../assets/img/globo.png" />
+</p>
