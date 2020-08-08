@@ -2,6 +2,8 @@
 
 Aqui temos o cliente do software. Ele é responsável por toda interface que o usuário interage.
 
+[Clique aqui para ler sobre as tecnologias que utilizei para montar o cliente](ABOUT.md)
+
 ![Imagem do cliente executando](../assets/img/client-running.jpg)
 
 <p align="center">
@@ -34,5 +36,7 @@ Para a execução de testes, utilize `npm test`. Isto executará o Karma, que fi
 <p align="center">
     <img src="../assets/img/globo.png" />
 </p>
+
+[Clique aqui para ler sobre as tecnologias que utilizei para montar o cliente](ABOUT.md)
 
 [Retornar à raiz](../README.md)

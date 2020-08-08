@@ -32,4 +32,6 @@ npm test
 
 Irá executar o **mocha**, que executará a suíte de testes.
 
+[Clique aqui para ler sobre as tecnologias que utilizei para montar a API](ABOUT.md)
+
 [Retornar à raiz](../README.md)
